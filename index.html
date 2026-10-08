@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>NETFLIX MOVIE CRUD</title>
+</head>
+
+<body>
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-md-6 logo">
+                <a href="index.html">
+                    <img src="./assets/img/netflixLogo.svg">
+                </a>
+            </div>
+            <div class="col-md-6 text-right">
+                <button id="movieAddBtn" class="btn net-pri-btn">Add Movie</button>
+            </div>
+        </div>
+    </div>
+    <!-- //fluid// -->
+    <div class="container-fluid pt-5">
+        <div class="row" id="movieContainer">
+            <!-- <div class="col-md-3">
+                <div class="card movicard">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4 class="m-0 movititle">movie namecccccccccccccccccccccccccc</h4>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="m-0"><span class="badge badge-success">4.7</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body py-0">
+                        <figure class="moviefigure">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Z3dEAbwsV6cee1Prx-8EMR-cCA7aaHXkKoVrD-sDFQ&s=10"
+                                alt="MONEY HIEST">
+
+                            <figcaption class="m-0">
+                                <h3>money heist</h3>
+                                <p>Money Heist (Spanish: La casa de papel, The House of
+                                    Paper') is a Spanish heist crime drama television series created by Álex Pina. The
+                                    series traces two long-prepared heists led by the Professor (Álvaro Morte)
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center ">
+                        <button id="editMovieBtn" class="btn btn-sm net-sec-btn">EDIT</button>
+                        <button id="deleteMovieBtn" class="btn btn-sm net-pri-btn">REMOVE</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="moviModal" id="moviModal">
+        <form id="moviForm">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h3 class="m-0">Movie Name</h3>
+                    <i role="button" class="fa-solid fa-xmark fa-2x closeForm"></i>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="movieName">Movie Name :</label>
+                        <input type="text" class="form-control" id="movieName">
+                    </div>
+                    <div class="form-group">
+                        <label for="movieImg">Movie Image :</label>
+                        <input type="text" class="form-control" id="movieImg">
+                    </div>
+                    <div class="form-group">
+                        <label for="movieDescription">Movie Description :</label>
+                        <textarea type="text" class="form-control" id="movieDescription"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="movieRating">Movie Rating :</label>
+                        <select type="text" id="movieRating" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <button type="submit" id="AddMovieCard" class="btn btn-sm net-sec-btn">Add Movie</button>
+                    <button type="button" id="UpdateMovieCard" class="btn btn-sm net-sec-btn d-none">Update
+                        Movie</button>
+                    <button type="button" id="closeForm" class="btn btn-sm net-pri-btn closeForm">close</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="backDrop closeForm" id="backDrop"></div>
+
+
+    <div class="spinner d-none" id="spinner">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
